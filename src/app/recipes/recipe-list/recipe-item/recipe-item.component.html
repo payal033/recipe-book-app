@@ -1,1 +1,13 @@
-<p>recipe-item works!</p>
+<div class="list-group mb-3">
+  <a href="#" class="list-group-item list-group-item-action" (click)="onSelected()">
+    <div class="row d-flex align-items-center justify-content-between w-100">
+      <div class="col-md-10">
+        <h5 class="m-0 p-0">{{ recipeData.name }}</h5>
+        <p class="m-0 p-0" style="font-size: 13px;">{{ recipeData.description }}</p>
+      </div>
+      <div class="col-md-2">
+         <img class="me-auto pull-right"  [src]="recipeData.imageURL" [alt]="recipeData.name" style="max-height: 50px; border-radius: 50%;">
+      </div>
+    </div>
+  </a>
+</div>

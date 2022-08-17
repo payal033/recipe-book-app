@@ -1,1 +1,5 @@
-<app-header></app-header>
+<app-header (linkSelected)="navigate($event)"></app-header>
+<div class="container">
+    <app-recipes *ngIf="featureSelected === 'recipes'"></app-recipes>
+    <app-shopping-list *ngIf="featureSelected === 'shopping-list'"></app-shopping-list>
+</div>
