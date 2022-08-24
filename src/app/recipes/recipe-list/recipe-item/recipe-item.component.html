@@ -3,7 +3,7 @@
     <div class="row d-flex align-items-center justify-content-between w-100">
       <div class="col-md-10">
         <h5 class="m-0 p-0">{{ recipeData.name }}</h5>
-        <p class="m-0 p-0" style="font-size: 13px;">{{ recipeData.description }}</p>
+        <p class="m-0 p-0" style="font-size: 13px;">{{ recipeData.description.split("|")[0] }}</p>
       </div>
       <div class="col-md-2">
          <img class="me-auto pull-right"  [src]="recipeData.imageURL" [alt]="recipeData.name" style="max-height: 50px; border-radius: 50%;">

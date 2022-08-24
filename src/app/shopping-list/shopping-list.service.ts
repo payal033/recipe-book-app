@@ -9,8 +9,8 @@ export class ShoppingListService {
   ingredientsChanged = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
-    new Ingredient("Tomatoes", 10),
-    new Ingredient("Apples",10)
+    new Ingredient("Tomatoes", "1 kg"),
+    new Ingredient("Apples","1 kg")
   ];
 
   constructor() { }
@@ -22,6 +22,11 @@ export class ShoppingListService {
 
   getIngredients() {
     return this.ingredients.slice();
+  }
+
+  addIngredientsFromRecipes(ingredients: Ingredient[]) {
+      this.ingredients.push(...ingredients)
+      this.ingredientsChanged.emit(this.ingredients.slice())
   }
 
 }
