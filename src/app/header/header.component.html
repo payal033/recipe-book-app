@@ -3,11 +3,11 @@
       <a class="navbar-brand" href="#">Recipe Book</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item" (click)="onSelectLink('recipes')">
-            <a class="nav-link" href="#">Recipes</a>
+          <li class="nav-item" >
+            <a class="nav-link" [routerLink]="['recipes']">Recipes</a>
           </li>
-          <li class="nav-item" (click)="onSelectLink('shopping-list')">
-            <a class="nav-link" href="#">Shopping List</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
           </li>
         </ul>
         <ul class="navbar-nav">
