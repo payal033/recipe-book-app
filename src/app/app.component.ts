@@ -3,14 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-
-  featureSelected: String = 'recipes'
-  
-    navigate(value: any) {
-      this.featureSelected = value
-      
-    }
-}
+export class AppComponent {}
