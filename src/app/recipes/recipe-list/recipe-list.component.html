@@ -1,8 +1,9 @@
 <div class="row">
-    <div class="col-xs-12">
-        <button class="btn btn-primary">New Recipe</button>
+    <div class="col-xs-12 m-3">
+        <button class="btn btn-dark">New Recipe</button>
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-xs-12">
         <app-recipe-item *ngFor="let recipe of recipes; let i = index" [recipeData]="recipe" [index]="i" ></app-recipe-item>
