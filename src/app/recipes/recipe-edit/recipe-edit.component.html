@@ -19,7 +19,7 @@
                 <div class="col-xs-12">
                     <div class="form-group">
                         <label for="imagePath">Image URL</label>
-                        <input type="text" id="imagePath" class="form-control" formControlName="imagePath">
+                        <input type="text" id="imagePath" class="form-control" formControlName="imageURL">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <label class="my-2">Ingredients</label>
                     <div class="row" *ngFor="let ingredientCtrl of controls; let i = index" [formGroupName]="i" style="margin-top: 10px;">
                         <div class="col-md-8">
-                            <input type="text" class="form-control" formControlName="ingName">
+                            <input type="text" class="form-control" formControlName="name">
                         </div>
                         <div class="col-md-2">
                             <input type="text" class="form-control" formControlName="quantity">
