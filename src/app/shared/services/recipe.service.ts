@@ -1,8 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Ingredient } from '../shared/ingredient.model';
-import { Recipe } from '../shared/recipe.model';
-import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { Ingredient } from '../models/ingredient.model';
+import { Recipe } from '../models/recipe.model';
+import { ShoppingListService } from './shopping-list.service';
 
 @Injectable({
   providedIn: 'root',
