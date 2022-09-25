@@ -13,6 +13,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode: boolean = false;
   recipeForm: FormGroup;
+  recipeTypes = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,7 @@ export class RecipeEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.recipeTypes = this.recipeService.getRecipeTypes();
     this.route.params.subscribe((params: Params) => {
       this.id = params['id'];
       this.editMode = params['id'] != null;

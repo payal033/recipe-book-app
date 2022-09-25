@@ -1,3 +1,95 @@
 input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
     border: 1.5px solid red;
 }
+
+.container {
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    width: 100%;
+    padding: 20px;
+}
+
+.button {
+    text-align: center;
+    background: none;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    padding: 5px 8px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.save {
+    border: 1px solid #008104;
+    color: #008104;
+    margin-bottom: 0px;
+}
+
+.save:hover {
+    background-color: #008104;
+    color: #fff;
+}
+
+.cancel {
+    border: 1px solid #f44336;
+    color: #f44336;
+    margin-bottom: 0px;
+}
+
+.cancel:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.uploadImg {
+    width: 50%;
+    height: 300px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+input, select, textarea {
+    border: none;
+    background-color: #f7f7f7;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.addNew {
+    border: 1px solid #a70082;
+    color: #a70082;
+    margin-bottom: 0px;
+}
+
+.addNew:hover {
+    background: #a70082;
+    color: #fff;
+}
+
+.deleteIng {
+    border: 1px solid #f44336;
+    background-color: #f44336;
+    color: #fff;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+

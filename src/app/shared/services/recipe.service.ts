@@ -10,8 +10,27 @@ import { ShoppingListService } from './shopping-list.service';
 export class RecipeService {
   private recipes: Recipe[] = [];
 
+  private recipeTypes = [
+    'Appetizer',
+    'Bread',
+    'Breakfast',
+    'Dessert',
+    'Drink',
+    'Main Dish',
+    'Salad',
+    'Sauce/Salsa',
+    'Side Dish',
+    'Snack',
+    'Soup',
+    'Wrap/Sandwich',
+  ];
+
   recipesChanged = new Subject<Recipe[]>();
   constructor(private shoppingService: ShoppingListService) {}
+
+  getRecipeTypes() {
+    return this.recipeTypes;
+  }
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;

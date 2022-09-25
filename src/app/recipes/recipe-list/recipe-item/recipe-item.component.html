@@ -1,4 +1,4 @@
-<div class="list-group mb-3">
+<!-- <div class="list-group mb-3">
   <a class="list-group-item list-group-item-action" [routerLink]="[index]" [routerLinkActive]="['active']">
     <div class="row d-flex align-items-center justify-content-between w-100">
       <div class="col-md-10">
@@ -10,4 +10,18 @@
       </div>
     </div>
   </a>
-</div>
+</div> -->
+
+<a [routerLink]="[index]" routerLinkActive="active" class="recipe"> 
+  <div class="details">
+     <p class="recipeType">Dessert</p>
+     <h5>{{ recipeData.name | shorten: 32}}</h5>
+    <div class="info">
+      <p><fa-icon [icon]="faStopwatch"></fa-icon> 120 mins</p>
+      <p><fa-icon [icon]="faPeopleGroup"></fa-icon> 6-8 Servings</p>
+    </div>
+  </div>
+  <div class="recipe-image"> 
+    <img [src]="recipeData.imageURL" [alt]="recipeData.name">
+  </div>
+</a>

@@ -1,15 +1,33 @@
-<div class="row">
-    <div class="col-xs-12">
-      <img [src]="recipeDetail.imageURL" alt="{{ recipeDetail.name }}" class="img-responsive" style="max-height: 300px;">
+<div class="container" >
+    <div class="manage">
+      <button class="button edit" (click)="onEditRecipe()"><fa-icon [icon]="faPenToSquare"></fa-icon>  Edit</button>
+      <button class="button delete" (click)="onDeleteRecipe()"><fa-icon [icon]="faTrash"></fa-icon>  Delete</button>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>{{ recipeDetail.name }}</h2>
-      <h4></h4>
+    <div class="recipeName">
+      <h3>{{ recipeDetail.name }}</h3>
     </div>
-  </div>
-  <div class="row">
+    <div class="recipepic">
+        <img [src]="recipeDetail.imageURL" alt="{{ recipeDetail.name }}" class="img-responsive" style="max-height: 300px;">
+    </div>
+    <div class="details">
+        <div class="time-servings">
+          <p>COOK TIME</p>
+          <p>1hr 20mins</p>
+        </div>
+        <div class="time-servings">
+          <p>SERVINGS</p>
+          <p>6-8</p>
+        </div>
+        <div class="time-servings">
+          <p>TYPE</p>
+          <p>Dessert</p>
+        </div>
+    </div>
+    <div class="recipeDesc">
+      <h5>Description</h5>
+      <div class="description">{{ recipeDetail.description }}</div>
+    </div>
+  <!-- <div class="row">
     <div class="col-xs-12">
       <div class="btn-group">
         <button type="button" class="btn btn-primary dropdown-toggle" appDropdown>Manage Recipe</button>
@@ -21,13 +39,14 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12">{{ recipeDetail.description }}</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let ingredient of recipeDetail.ingredients">
+  -->
+  <div class="ingredient">
+    <div class="header" *ngIf="recipeDetail.ingredients.length !== 0">
+      <h5>Ingredients</h5>
+      <button class="button addSL" (click)="addToShoppingList()"><fa-icon [icon]="faRectangleList"></fa-icon>  Add to Shopping List</button>
+    </div>
+        <ul class="">
+          <li *ngFor="let ingredient of recipeDetail.ingredients">
               {{ ingredient.name }} - {{ ingredient.quantity }}
           </li>
         </ul>

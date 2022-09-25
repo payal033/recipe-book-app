@@ -18,6 +18,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './shared/services/recipe.service';
 import { DataStorageService } from './shared/services/data-storage.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShortenPipe } from './shared/pipes/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

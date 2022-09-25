@@ -1,0 +1,140 @@
+.container {
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+.recipeName h3 {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.recipepic {
+    text-align: center;
+}
+
+.recipepic img {
+    width: 50%;
+    height: 250px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 14px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ingredient ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.ingredient ul li {
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    background-color: #ffeae8;
+    display: inline-block;
+    color: #2d2013;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px;
+    margin: 0 5px 5px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button {
+    text-align: center;
+    background: none;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    padding: 5px 8px;
+}
+
+.addSL:hover {
+    background-color: #001f40;
+    color: #fff;
+}
+
+.manage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.delete {
+    border: 1px solid #f44336;
+    color: #f44336;
+    margin-bottom: 0px;
+}
+
+.edit {
+    border: 1px solid #0A66C2;
+    color: #0A66C2;
+    margin-bottom: 0px;
+}
+
+.edit:hover {
+    background-color: #0A66C2;
+    color: #fff;
+}
+
+.delete:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #00003d;
+    border-radius: 5px;
+    margin-left:  25%;
+    margin-right: 25%;
+    padding: 8px;
+}
+
+.time-servings {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.time-servings p:first-of-type {
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: #eaa700;
+    font-weight: 600;
+}
+
+.time-servings p:last-of-type {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 0px;
+}
