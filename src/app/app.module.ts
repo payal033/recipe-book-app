@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShortenPipe } from './shared/pipes/shorten.pipe';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AuthComponent } from './auth/auth.component';
     RecipeEditComponent,
     ShortenPipe,
     AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
