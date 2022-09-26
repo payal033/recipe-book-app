@@ -20,6 +20,7 @@ import { DataStorageService } from './shared/services/data-storage.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShortenPipe } from './shared/pipes/shorten.pipe';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ShortenPipe } from './shared/pipes/shorten.pipe';
     RecipeStartComponent,
     RecipeEditComponent,
     ShortenPipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
