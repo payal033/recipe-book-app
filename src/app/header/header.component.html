@@ -4,25 +4,28 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <li class="nav-item" >
-            <a class="nav-link" >Discover</a>
+            <a class="nav-link">Discover</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" [routerLink]="['recipes']" routerLinkActive="active">My Recipes</a>
+            <a class="nav-link" [routerLink]="['recipes']" routerLinkActive="active" *ngIf="isAuthenticated">My Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
+            <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active" *ngIf="isAuthenticated">Shopping List</a>
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item pull-right">
-            <a class="nav-link" routerLink="/auth" routerLinkActive="active">Login</a>
-        </li>
-            <li class="nav-item dropdown pull-right">
+            <li class="nav-item dropdown pull-right" *ngIf="isAuthenticated">
                 <a class="nav-link dropdown-toggle" role="button" appDropdown>Manage</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" (click)="onSaveData()">Save Data</a></li>
                   <li><a class="dropdown-item" (click)="onFetchData()">Fetch Data</a></li>
                 </ul>
+            </li>
+            <li class="nav-item pull-right">
+              <a class="nav-link" routerLink="/auth" routerLinkActive="active" *ngIf="!isAuthenticated">Login</a>
+            </li>
+            <li class="nav-item pull-right">
+              <a class="nav-link" routerLinkActive="active" *ngIf="isAuthenticated">Logout</a>
             </li>
         </ul>
       </div>
