@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { User } from '../shared/models/user.model';
 import { AuthResponseData, AuthService } from '../shared/services/auth.service';
 
 @Component({
