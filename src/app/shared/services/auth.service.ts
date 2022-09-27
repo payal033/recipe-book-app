@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -21,15 +21,17 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
-    return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
-        this.API_KEY,
-      {
-        email: email,
-        password: password,
-        returnSecureToken: true,
-      }
-    );
+    return this.http
+      .post<AuthResponseData>(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+          this.API_KEY,
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }
+      )
+      .pipe(catchError(this.handleError));
   }
 
   signUp(email: string, password: string) {
@@ -43,19 +45,27 @@ export class AuthService {
           returnSecureToken: true,
         }
       )
-      .pipe(
-        catchError((errorRes) => {
-          let errorMessage = 'An unknown error occured!';
-          if (!errorRes.error || !errorRes.error.error) {
-            return throwError(errorMessage);
-          }
-          switch (errorRes.error.error.message) {
-            case 'EMAIL_EXISTS':
-              errorMessage =
-                'The email address is already in use by another account.';
-          }
-          return throwError(errorMessage);
-        })
-      );
+      .pipe(catchError(this.handleError));
+  }
+
+  private handleError(errorRes: HttpErrorResponse) {
+    let errorMessage = 'An unknown error occured!';
+    if (!errorRes.error || !errorRes.error.error) {
+      return throwError(errorMessage);
+    }
+    switch (errorRes.error.error.message) {
+      case 'EMAIL_EXISTS':
+        errorMessage =
+          'The email address is already in use by another account.';
+        break;
+      case 'EMAIL_NOT_FOUND':
+        errorMessage =
+          'There is no user record corresponding to this email address';
+        break;
+      case 'INVALID_PASSWORD:':
+        errorMessage = 'Invalid password';
+        break;
+    }
+    return throwError(errorMessage);
   }
 }
