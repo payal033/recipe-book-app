@@ -25,7 +25,7 @@
               <a class="nav-link" routerLink="/auth" routerLinkActive="active" *ngIf="!isAuthenticated">Login</a>
             </li>
             <li class="nav-item pull-right">
-              <a class="nav-link" routerLinkActive="active" *ngIf="isAuthenticated">Logout</a>
+              <a class="nav-link" routerLinkActive="active" (click)="onLogout()" *ngIf="isAuthenticated">Logout</a>
             </li>
         </ul>
       </div>
