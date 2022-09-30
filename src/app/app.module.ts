@@ -4,21 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DropdownDirective } from './shared/directives/dropdown.directive';
-import { ShoppingListService } from './shared/services/shopping-list.service';
-import { RecipeService } from './shared/services/recipe.service';
-import { DataStorageService } from './shared/services/data-storage.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
-import { AuthInterceptor } from './shared/auth.interceptor';
-import { AlertComponent } from './shared/components/alert/alert.component';
-import { PlaceholderDirective } from './shared/directives/placeholder.directive';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, AuthComponent],
@@ -26,15 +17,10 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RecipesModule,
-    ShoppingListModule,
-    SharedModule,
-  ],
-  providers: [
-    ShoppingListService,
-    RecipeService,
-    DataStorageService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    RecipesModule, // recipe feature module
+    ShoppingListModule, // shopping feature module
+    SharedModule, // some shared modules, components and pipes
+    CoreModule, // services
   ],
   bootstrap: [AppComponent],
 })
