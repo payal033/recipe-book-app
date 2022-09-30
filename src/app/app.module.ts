@@ -4,42 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { ShoppingListService } from './shared/services/shopping-list.service';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './shared/services/recipe.service';
 import { DataStorageService } from './shared/services/data-storage.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ShortenPipe } from './shared/pipes/shorten.pipe';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { AuthInterceptor } from './shared/auth.interceptor';
-import { AlertComponent } from './alert/alert.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 import { PlaceholderDirective } from './shared/directives/placeholder.directive';
+import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
     DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    ShortenPipe,
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
@@ -52,6 +36,8 @@ import { PlaceholderDirective } from './shared/directives/placeholder.directive'
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    RecipesModule,
+    ShoppingListModule,
   ],
   providers: [
     ShoppingListService,
