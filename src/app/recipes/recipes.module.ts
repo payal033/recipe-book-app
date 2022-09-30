@@ -11,6 +11,7 @@ import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShortenPipe } from '../shared/pipes/shorten.pipe';
 import { RecipesRoutingModule } from './recipes-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,7 @@ import { RecipesRoutingModule } from './recipes-routing.module';
     RecipeDetailComponent,
     RecipeStartComponent,
     RecipeEditComponent,
-    ShortenPipe,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule,
-    FontAwesomeModule,
-    RecipesRoutingModule,
-  ],
+  imports: [RouterModule, RecipesRoutingModule, SharedModule],
 })
 export class RecipesModule {}

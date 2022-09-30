@@ -5,6 +5,7 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../shared/auth.guard';
+import { SharedModule } from '../shared/shared.module';
 
 const shoppingRoutes: Routes = [
   {
@@ -16,6 +17,6 @@ const shoppingRoutes: Routes = [
 
 @NgModule({
   declarations: [ShoppingListComponent, ShoppingEditComponent],
-  imports: [CommonModule, FormsModule, RouterModule.forChild(shoppingRoutes)],
+  imports: [SharedModule, RouterModule.forChild(shoppingRoutes)],
 })
 export class ShoppingListModule {}
