@@ -1,12 +1,9 @@
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpResponse,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 
 export interface AuthResponseData {
@@ -23,7 +20,7 @@ export interface AuthResponseData {
   providedIn: 'root',
 })
 export class AuthService {
-  API_KEY = 'AIzaSyAFsOeZ6TTHPLkWKf4cgH32Yv2JLQ_bDVI';
+  API_KEY = environment.firebaseAPIKey;
   tokenExpirationTime: any;
 
   user = new BehaviorSubject<User>(null);
