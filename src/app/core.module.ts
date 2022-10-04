@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ShoppingListService } from './shared/services/shopping-list.service';
 import { RecipeService } from './shared/services/recipe.service';
 import { DataStorageService } from './shared/services/data-storage.service';

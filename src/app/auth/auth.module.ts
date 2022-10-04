@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   declarations: [AuthComponent],
   imports: [
     SharedModule,
-    RouterModule.forChild([{ path: 'auth', component: AuthComponent }]),
+    RouterModule.forChild([{ path: '', component: AuthComponent }]),
   ],
 })
 export class AuthModule {}

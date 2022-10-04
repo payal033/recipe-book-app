@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 
 const shoppingRoutes: Routes = [
   {
-    path: 'shopping-list',
+    path: '',
     component: ShoppingListComponent,
     canActivate: [AuthGuard],
   },
