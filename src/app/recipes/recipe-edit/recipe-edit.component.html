@@ -15,22 +15,22 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="time">Cook Time</label>
-                    <input type="text" class="form-control" id="time">
+                    <input type="text" class="form-control" id="time" formControlName="cookTime">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                     <label for="type">Recipe Type</label>
-                    <select id="type" class="form-select">
-                        <option>Choose</option>
-                      <option *ngFor="let type of recipeTypes" value="type">{{ type }}</option>
+                    <select id="type" class="form-select" formControlName="recipeType">
+                      <option disabled value="">Choose</option>
+                      <option *ngFor="let type of recipeTypes" [value]="type">{{ type }}</option>
                     </select>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group">
                     <label for="servings">Servings</label>
-                    <input type="text" class="form-control" id="servings">
+                    <input type="text" class="form-control" id="servings" formControlName="servings">
                 </div>
               </div>
             </div>
