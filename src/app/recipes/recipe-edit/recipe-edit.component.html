@@ -64,7 +64,9 @@
                             <input type="text" class="form-control" formControlName="quantity">
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="button deleteIng" (click)="onDeleteIngredient(i)">X</button>
+                            <button type="button" class="button deleteIng" (click)="onDeleteIngredient(i)">
+                                <fa-icon [icon]="faXmark"></fa-icon>
+                            </button>
                         </div> 
                     </div>
                     <hr>

@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { AlertComponent } from '../shared/components/alert/alert.component';
 import { PlaceholderDirective } from '../shared/directives/placeholder.directive';
-import { User } from '../shared/models/user.model';
 import { AuthResponseData, AuthService } from '../shared/services/auth.service';
 
 @Component({
@@ -87,7 +86,5 @@ export class AuthComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.closeSub.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }

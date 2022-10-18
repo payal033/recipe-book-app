@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { Ingredient } from '../shared/models/ingredient.model';
 import { ShoppingListService } from '../shared/services/shopping-list.service';
@@ -11,6 +12,8 @@ import { ShoppingListService } from '../shared/services/shopping-list.service';
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   subscription: Subscription;
+
+  faTrash = faTrash;
 
   constructor(private shoppingService: ShoppingListService) {}
 

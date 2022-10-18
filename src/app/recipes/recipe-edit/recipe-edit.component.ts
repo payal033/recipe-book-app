@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Recipe } from 'src/app/shared/models/recipe.model';
 import { RecipeService } from '../../shared/services/recipe.service';
 
@@ -14,6 +15,7 @@ export class RecipeEditComponent implements OnInit {
   editMode: boolean = false;
   recipeForm: FormGroup;
   recipeTypes = [];
+  faXmark = faXmark;
 
   constructor(
     private route: ActivatedRoute,
