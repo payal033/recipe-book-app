@@ -1,0 +1,13 @@
+<div class="container">
+    <h3>Find new recipes!</h3>
+    <div class="flex">
+        <form (ngSubmit)="onSearch(searchForm)" id="submit" class="flex" #searchForm="ngForm">
+            <input type="text" id="search" name="search" ngModel required placeholder="Search recipes and more...">
+            <button class="search-btn"  type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+        </form>
+        <button id="random" class="random-btn" (click)="findRandom()"><fa-icon [icon]="faShuffle"></fa-icon></button>
+    </div>
+    <div id="result-heading"></div>
+    <div id="meals" class="meals"></div>
+    <div id="single-meal"></div>
+</div>
