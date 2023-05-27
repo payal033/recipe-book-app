@@ -79,6 +79,12 @@ h5 {
     color: #fff;
 }
 
+.addedSL {
+    background-color: #008104;
+    color: #fff;
+    border: 1px solid #008104;
+}
+
 .manage {
     display: flex;
     justify-content: space-between;
@@ -139,3 +145,4 @@ h5 {
     text-align: center;
     margin-bottom: 0px;
 }
+

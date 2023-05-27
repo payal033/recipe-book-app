@@ -1,13 +1,91 @@
 <div class="container">
-    <h3>Find new recipes!</h3>
-    <div class="flex">
-        <form (ngSubmit)="onSearch(searchForm)" id="submit" class="flex" #searchForm="ngForm">
-            <input type="text" id="search" name="search" ngModel required placeholder="Search recipes and more...">
-            <button class="search-btn"  type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
-        </form>
-        <button id="random" class="random-btn" (click)="findRandom()"><fa-icon [icon]="faShuffle"></fa-icon></button>
+  <h3>Find new recipes!</h3>
+  <!-- find new recipes form -->
+  <div class="flex">
+    <form
+      (ngSubmit)="onSearch(searchForm)"
+      id="submit"
+      class="flex"
+      #searchForm="ngForm"
+    >
+      <input
+        type="text"
+        id="search"
+        name="search"
+        ngModel
+        required
+        placeholder="Search recipes and more..."
+      />
+      <button class="search-btn" type="submit">
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+      </button>
+    </form>
+    <button id="random" class="random-btn" (click)="findRandom()">
+      <fa-icon [icon]="faShuffle"></fa-icon>
+    </button>
+  </div>
+  <div id="result-heading"></div>
+
+  <!-- show list of found recipes -->
+  <div id="meals" class="meals" *ngIf="flagSearch == true">
+    <div
+      class="meal"
+      *ngFor="let recipe of searchedRecipes; let i = index"
+      [attr.data-index]="recipe.idMeal"
+      (click)="getMealById(recipe.idMeal)"
+    >
+      <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" />
+      <div class="meal-info">
+        <h5>{{ recipe.strMeal }}</h5>
+      </div>
     </div>
-    <div id="result-heading"></div>
-    <div id="meals" class="meals"></div>
-    <div id="single-meal"></div>
+  </div>
+
+  <!--show single meal  -->
+  <div
+    id="single-meal"
+    class="single-meal"
+    *ngIf="randomRecipe != null && flagSearch == false"
+  >
+    <h4>{{ randomRecipe.mealName }}</h4>
+    <img [src]="randomRecipe.mealImage" alt="{{ randomRecipe.mealName }}" />
+    <div class="single-meal-info">
+      <p>{{ randomRecipe.category ? randomRecipe.category : "" }}</p>
+    </div>
+    <div class="main">
+      <p>{{ randomRecipe.instructions }}</p>
+      <div *ngIf="randomRecipe.ingredients.length !== 0">
+        <h5>Ingredients</h5>
+      </div>
+      <ul>
+        <li *ngFor="let ingredient of randomRecipe.ingredients">
+          {{ ingredient }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--show single meal By ID  -->
+  <div
+    id="single-meal"
+    class="single-meal"
+    *ngIf="recipeById != null && flagSearch == true"
+  >
+    <h4>{{ recipeById.mealName }}</h4>
+    <img [src]="recipeById.mealImage" alt="{{ recipeById.mealName }}" />
+    <div class="single-meal-info">
+      <p>{{ recipeById.category ? recipeById.category : "" }}</p>
+    </div>
+    <div class="main">
+      <p>{{ recipeById.instructions }}</p>
+      <div *ngIf="recipeById.ingredients.length !== 0">
+        <h5>Ingredients</h5>
+      </div>
+      <ul>
+        <li *ngFor="let ingredient of recipeById.ingredients">
+          {{ ingredient }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

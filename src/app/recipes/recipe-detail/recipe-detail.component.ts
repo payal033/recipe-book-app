@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from 'src/app/shared/models/recipe.model';
 import { RecipeService } from '../../shared/services/recipe.service';
-import { faRectangleList } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheckSquare,
+  faRectangleList,
+} from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,9 +17,11 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 export class RecipeDetailComponent implements OnInit {
   faRectangleList = faRectangleList;
   faPenToSquare = faPenToSquare;
+  faCheckSquare = faCheckSquare;
   faTrash = faTrash;
   recipeDetail: Recipe;
   id: number;
+  addedToSL: boolean = false;
 
   constructor(
     private recipeService: RecipeService,
@@ -33,6 +38,7 @@ export class RecipeDetailComponent implements OnInit {
 
   addToShoppingList() {
     this.recipeService.addRecipesToShopList(this.recipeDetail.ingredients);
+    this.addedToSL = true;
   }
 
   onEditRecipe() {
