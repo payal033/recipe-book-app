@@ -1,6 +1,6 @@
 # RecipeBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+An app that allows users to create new recipes, modify or delete already-existing ones, search for new recipes, add ingredients to shopping lists, and add, update, or remove ingredients from shopping list and more
 
 ### Demo
 
@@ -21,3 +21,5 @@ Screenshots
 
 ![Search new recipes](./screenshots/discover.png)
 ![Get Random recipe](./screenshots/randomRecipe.png)
+
+This project was generated with Angular CLI version 14.1.0.
