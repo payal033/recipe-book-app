@@ -2,14 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Development server
+### Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[Recipe Book](https://recipeapp-59196.web.app/auth)
 
-## Build
+Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### My Recipes
 
-## Running unit tests
+![New Recipe](./screenshots/newRecipe.png)
+![Recipe Detail](./screenshots/existingRecipe.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Shopping List
+
+![Shopping List](./screenshots/shoppingList.png)
+
+#### Discover
+
+![Search new recipes](./screenshots/discover.png)
+![Get Random recipe](./screenshots/randomRecipe.png)
